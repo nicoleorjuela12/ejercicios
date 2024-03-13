@@ -36,20 +36,28 @@ function mostrarMenu(){
 
             case 1:
 
-            rl.question('ingrese un numero, puede ser positivo o negativo:', (number) => {
+            rl.question('ingrese un numero, puede ser positivo o negativo:', (number1) => {
+
+                const number =parseInt (number1);
                 
-                if (parseInt(number)> 0){
+                if (number > 0){
 
                     console.log("--------------------");
                     console.log(`El  numero es positivo`);
+                    console.log("--------------------");
+
 
                 }
 
                 else{
                     console.log("--------------------");
                     console.log("El  numero es negativo");
+                    console.log("--------------------");
+
 
                 }
+
+                mostrarMenu();
 
 
             });
@@ -58,30 +66,77 @@ function mostrarMenu(){
 
             case 2: 
 
-            rl.question('Digite un numero:',(number1) => {
-                rl.question('Digite otro numero:',(number2) => {
+            rl.question('Digite un numero:',(num1) => {
+                rl.question('Digite otro numero:',(num2) => {
 
-                    if (parseInt(number1)>parseInt(number2)){
+                    const number1 = parseInt (num1);
+                    const number2 = parseInt (num2);
+
+
+                    if (number1>number2){
 
                         console.log("--------------------");
                         console.log(`El numero mayor es:${number1} y el menor es el:${number2}`);
+                        console.log("--------------------");
+
 
                     }
 
                     else{
                         console.log("--------------------");
                         console.log(`El numero mayor es:${number2} y el menor es el:${number1}`);
+                        console.log("--------------------");
+
 
                     }
 
-                });
+                    mostrarMenu();
 
+
+                });
 
 
             });
 
             break;
 
+
+            case 3:
+                rl.question('Digite el primer numero positivo y entero:',(num1)=>{
+                    rl.question('Digite el segundo numero positivo y entero:',(num2)=>{
+                        rl.question('Ddigite el tercer numero positivo y entero:',(num3)=>{
+
+                            const number1 = parseInt (num1);
+                            const number2 = parseInt (num2);
+                            const number3 = parseInt (num3);
+
+
+                            if( number1 < 0 || number2 < 0 || number3 < 0){
+
+                                console.log("--------------------");
+                                console.log('Ingrese un numero valido');
+                                console.log("--------------------");
+
+                            }
+
+                            else{
+
+                                const menor =Math.min(number1,number2,number3);
+                                const mayor =Math.max(number1,number2,number3)
+                            }
+
+                        });
+
+
+                    });
+
+
+                });
+
+
+            case 99:
+                rl.close();
+            break;
 
                 
             
@@ -93,3 +148,5 @@ function mostrarMenu(){
 
     });
 }
+
+mostrarMenu(); 

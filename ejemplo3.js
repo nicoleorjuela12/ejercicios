@@ -22,9 +22,11 @@ INGRESE EL NUMERO DE LA OPCION QUE DESEA REALIZAR
         const option = parseInt(respuesta);
         switch (option) {
             case 1:
-                rl.question('Ingrese la base:', (base) => {
-                    rl.question('Ingrese la altura:', (height) => {
-                        let result = parseInt(base) * parseInt(height) / 2;
+                rl.question('Ingrese la base:', (base1) => {
+                    rl.question('Ingrese la altura:', (altura) => {
+                        const base = parseInt(base1);
+                        const height = parseInt(altura);
+                        let result = base * height / 2;
                         console.log("--------------------");
                         console.log(`El área es: ${result}`);
                         console.log("--------------------");
@@ -35,31 +37,35 @@ INGRESE EL NUMERO DE LA OPCION QUE DESEA REALIZAR
 
             case 2:
                 rl.question('Ingrese un número:', (number) => {
-                    rl.question('Ingrese un número:', (number2) => {
-                        let result = parseInt(number) + parseInt(number2);
+                    rl.question('Ingrese un número:', (numberr) => {
+                        const number = parseInt(number);
+                        const number2 = parseInt(numberr);
+                        let result = number + number2;
                         console.log("--------------------");
                         console.log(`El resultado de esta suma es: ${result}`);
                         console.log("--------------------");
-                        mostrarMenu(); // Mostrar el menú nuevamente
+                        mostrarMenu(); 
                     });
                 });
             break;
 
             case 3:
-                rl.question('Ingrese un número:', (number) => {
+                rl.question('Ingrese un número:', (number1) => {
     
-                    let result =(parseInt(number)) ** 2 ;
+                    const number = parseInt(number1);
+                    let result = number ** 2 ;
                     console.log("--------------------");
                     console.log(`El cuadrado de este número es: ${result}`);
                     console.log("--------------------");
-                    mostrarMenu(); // Mostrar el menú nuevamente
+                    mostrarMenu(); 
                  });
             break;
 
             case 4:
-                rl.question('Ingrese la cantidad de dolares:', (dollars) => {
+                rl.question('Ingrese la cantidad de dolares:', (dollarss) => {
     
-                    let result = parseInt(dollars) * 1.09;
+                    const dollars = parseInt(dollarss);
+                    let result = dollars * 1.09;
                     console.log("--------------------");
                     console.log(`El resultado de esta conversión es: ${result}`);
                     console.log("--------------------");
@@ -68,24 +74,26 @@ INGRESE EL NUMERO DE LA OPCION QUE DESEA REALIZAR
             break;
 
             case 5:
-                rl.question('Ingrese el valor de un lado del cuadrado:', (number) => {
+                rl.question('Ingrese el valor de un lado del cuadrado:', (number1) => {
 
-                    let result = parseInt(number) * (number);
-                    let result2 = parseInt(number) * 4;
+                    const number = parseInt(number1);
+                    let result = number * number;
+                    let result2 = number * 4;
                     console.log("--------------------");
                     console.log(`El área del cuadrado es: ${result} El perímetro del cuadrado es: ${result2}`);
                     console.log("--------------------");
-                    mostrarMenu(); // Mostrar el menú nuevamente
+                    mostrarMenu();
                 });
             break;
 
             case 6:
-                rl.question('ingrese el radio del cilindro:', (ratio) =>{
-                    rl.question('ingrese la altura del cilindro:', (height) =>{
+                rl.question('ingrese el radio del cilindro:', (radio) =>{
+                    rl.question('ingrese la altura del cilindro:', (altura) =>{
 
-                        let area = 2*(3.1416)*parseInt(ratio)**2  + 2*(3.1416)*parseInt(ratio)*parseInt(height);
-                        let volume = (3.1416)*parseInt(ratio)**2*parseInt(height);
-
+                        const ratio = parseInt(radio);
+                        const height = parseInt(altura);
+                        let area = 2 * (3.1416) * ratio ** 2 + 2 * (3.1416) * ratio * height;
+                        let volume = (3.1416) * ratio ** 2 * height;
 
                         console.log("--------------------");
                         console.log(`El área del cilindro es: ${area} El volumen del cilindro es: ${volume}`);
@@ -100,19 +108,36 @@ INGRESE EL NUMERO DE LA OPCION QUE DESEA REALIZAR
 
             case 7:
 
+                rl.question('Ingrese el valor del radio de la circunferencia:',(ratio1)=>{
+
+                    const ratio = parseInt(ratio1);
+
+                    let length = 2*(3.1416)*(ratio);
+                    let area = (3.1416)*(ratio)**2;
+
+                    console.log("--------------------");
+                    console.log(`La longuitud de la circunferencia es : ${length} El area del circulo inscrito: ${area}`);
+                    console.log("--------------------");
+
+                    mostrarMenu(); 
+
+
+                });
+
+            break;
+
 
             case 8: 
 
-                rl.question('Ingrese un numero:', (number1)=>{
-                    rl.question('Ingrese su segundo numero:', (number2)=>{
-                        rl.question('Ingrese su tercer numero:',(number3)=>{
+                rl.question('Ingrese un numero:', (num1)=>{
+                    rl.question('Ingrese su segundo numero:', (num2)=>{
+                        rl.question('Ingrese su tercer numero:',(num3)=>{
 
-                            const num1 = parseInt(number1);
-                            const num2 = parseInt(number2);
-                            const num3 = parseInt(number3);
+                            const number1 = parseInt(num1);
+                            const number2 = parseInt(num2);
+                            const number3 = parseInt(num3);
 
-                                
-                            const average = (num1 + num2 + num3) / 3;
+                            let average = (number1 + number2 + number3) / 3;
                             console.log("--------------------");
                             console.log(`El promedio de los tres numeros es: ${average}`);
                             console.log("--------------------");
@@ -139,4 +164,4 @@ INGRESE EL NUMERO DE LA OPCION QUE DESEA REALIZAR
     });
 }
 
-mostrarMenu(); 
+mostrarMenu();
