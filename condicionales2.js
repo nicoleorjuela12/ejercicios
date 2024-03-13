@@ -104,7 +104,7 @@ function mostrarMenu(){
             case 3:
                 rl.question('Digite el primer numero positivo y entero:',(num1)=>{
                     rl.question('Digite el segundo numero positivo y entero:',(num2)=>{
-                        rl.question('Ddigite el tercer numero positivo y entero:',(num3)=>{
+                        rl.question('Digite el tercer numero positivo y entero:',(num3)=>{
 
                             const number1 = parseInt (num1);
                             const number2 = parseInt (num2);
@@ -121,9 +121,16 @@ function mostrarMenu(){
 
                             else{
 
-                                const menor =Math.min(number1,number2,number3);
-                                const mayor =Math.max(number1,number2,number3)
+                                const minor =Math.min(number1,number2,number3);
+                                const elderly =Math.max(number1,number2,number3);
+
+                                console.log(`El numero mayor es:${elderly}`);
+                                console.log("--------------------");
+                                console.log(`El numero menor es:${minor}`);
+                                console.log("--------------------");
                             }
+
+                            mostrarMenu();
 
                         });
 
@@ -133,6 +140,40 @@ function mostrarMenu(){
 
                 });
 
+            break;
+
+
+            case 4:
+
+            rl.question('Digite un  numero:',(numberone)=>{
+                rl.question('Digite otro numero:', (numbertwo)=>{
+
+                    const numberA= parseInt(numberone);
+                    const numberB=parseInt(numbertwo);
+
+                    if(numberA < numberB){
+
+                        let sum= numberA + numberB;
+                        console.log("--------------------");
+                        console.log(`La suma es :${sum}`);
+                        console.log("--------------------");
+
+                    }
+
+                    else{
+                        let rest= numberA - numberB;
+                        console.log("--------------------");
+                        console.log(`La resta es:${rest}`);
+                        console.log("--------------------");
+                    }
+
+                    mostrarMenu();
+
+                })
+
+
+            });
+            break;
 
             case 99:
                 rl.close();
