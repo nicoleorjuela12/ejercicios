@@ -169,11 +169,80 @@ function mostrarMenu(){
 
                     mostrarMenu();
 
-                })
+                });
 
 
             });
             break;
+
+            case 5:
+
+            rl.question('Digite el dividendo:',(numero1)=>{
+                rl.question('Digite el divisor:',(numero2)=>{
+
+                    const dividend =parseInt(numero1);
+                    const divider = parseInt(numero2);
+
+                    if(dividend ===0 || divider === 0){
+
+                        console.log ("Division por cero no esta definida,intente de nuevo"); 
+
+                    }
+
+                    else{
+
+                        let division = dividend / divider;
+                        console.log(`La division es:${division}`);
+
+
+                    }
+
+                    mostrarMenu();
+
+                });
+
+
+            });
+
+            break;
+
+            case 6:
+
+            rl.question('Digite un numero:',(numeroa)=>{
+                rl.question('Digite otro numero:',(numerob)=>{
+
+                    const number1 =parseInt(numeroa);
+                    const number2 =parseInt(numerob);
+
+                    if (number1 < 0 || number2 < 0 ){
+
+                        let result= number1 + number2 ;
+
+                        console.log(`La suma es:${result}`);
+
+
+                    }
+
+                    else{
+
+                        let resultmult= number1 * number2 ;
+
+                        console.log(`La multiplicacion es:${resultmult}`);
+
+
+                    }
+
+                    mostrarMenu();
+
+
+
+                });
+
+
+            });
+
+            break;
+
 
             case 99:
                 rl.close();

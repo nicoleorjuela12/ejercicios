@@ -65,6 +65,66 @@ function mostrarMenu(){
             mostrarMenu();
             break;
 
+            case 4:
+
+            for (i=1; i<=30; i+=1){
+
+                let result= i**2;
+                console.log("--------------------");
+                console.log(`${result}`);
+
+
+
+            }
+
+            mostrarMenu();
+
+            break;
+
+            case 5: {
+                let sumtotal = 0; 
+            
+                for (let i = 1; i <= 100; i += 1) {
+                    let result = i ** 2;
+                    sumtotal += result; 
+                    console.log("--------------------");
+                    console.log(`${result}`);
+                }
+            
+                console.log("La suma total es:", sumtotal); // Imprime el valor total después del bucle
+                
+                mostrarMenu();
+
+            }
+
+            break;
+
+            case 6:
+                rl.question('Ingrese un número:', (numero1) => {
+                    rl.question('Ingrese otro número:', (numero2) => {
+            
+                        const number1 = parseInt(numero1);
+                        const number2 = parseInt(numero2);
+            
+                        if (number1 >= number2) {
+                            console.log("El primer número debe ser menor que el segundo.");
+                            
+                            
+                        } else {
+                            console.log(`Números comprendidos entre ${number1} y ${number2} en secuencia ascendente:`);
+                            let result = number1;
+                            while (result <= number2) {
+                                console.log(result);
+                                result++;
+                            }
+                            
+                        }
+
+                        mostrarMenu();
+                    });
+                });
+            break;
+            
             case 99:
                 rl.close(); 
             break;
