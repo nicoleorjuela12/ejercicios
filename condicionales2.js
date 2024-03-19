@@ -184,6 +184,7 @@ function mostrarMenu(){
                     const divider = parseInt(numero2);
 
                     if(dividend ===0 || divider === 0){
+                        console.log("--------------------");
 
                         console.log ("Division por cero no esta definida,intente de nuevo"); 
 
@@ -192,6 +193,7 @@ function mostrarMenu(){
                     else{
 
                         let division = dividend / divider;
+                        console.log("--------------------");
                         console.log(`La division es:${division}`);
 
 
@@ -217,6 +219,7 @@ function mostrarMenu(){
                     if (number1 < 0 || number2 < 0 ){
 
                         let result= number1 + number2 ;
+                        console.log("--------------------");
 
                         console.log(`La suma es:${result}`);
 
@@ -226,6 +229,7 @@ function mostrarMenu(){
                     else{
 
                         let resultmult= number1 * number2 ;
+                        console.log("--------------------");
 
                         console.log(`La multiplicacion es:${resultmult}`);
 
@@ -243,14 +247,40 @@ function mostrarMenu(){
 
             break;
 
+            case 7: 
+
+            rl.question('Digite un año:',(year)=>{
+
+                const year1= parseInt(year);
+
+                if((year1 % 4 == 0 && year1 % 100 != 0) || year1 % 400 == 0){
+
+                    console.log("--------------------");
+                    console.log(`El año ${year1} es bisiesto`);
+
+                }
+
+                else{
+                    console.log("--------------------");
+                    console.log(`El año ${year1} no es bisiesto`);
+
+                }
+                mostrarMenu(); 
+
+            });
+
+            break;
+
 
             case 99:
                 rl.close();
             break;
 
+            default:
+                console.log('Opción no válida. Por favor, seleccione una opción válida.');
+                mostrarMenu(); 
+            break;
                 
-            
-
 
         
 

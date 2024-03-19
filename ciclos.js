@@ -124,6 +124,37 @@ function mostrarMenu(){
                     });
                 });
             break;
+
+            case 7:
+
+                function sumarNumeros() {
+                    let sumTotal = 0;
+
+                    console.log("Ingrese los números para sumar (Ingrese 0 para terminar):");
+
+                    function pedirNumero() {
+                        rl.question('Ingrese un número: ', (number1) => {
+                            const numbers = parseInt(number1);
+
+                            if (numbers === 0) {
+                                console.log('Suma total:', sumTotal);
+                                rl.close();
+                            } else {
+                                sumTotal += numbers;
+                                pedirNumero(); 
+                            }
+                        });
+                    }
+
+                    pedirNumero(); 
+                }
+
+                sumarNumeros();
+
+            break;
+
+
+
             
             case 99:
                 rl.close(); 
